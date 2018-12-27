@@ -1,0 +1,30 @@
+
+
+<div class="container">
+  <br><br>
+  <div class="row">
+      <div class="col-md-3 col-sm-4 col-lg-2">
+        <img class="rounded-circle" src={{user.avatarURL}} />
+      </div>
+      <div class="col-md-4 col-sm-5 col-lg-3">
+          <h5>{{user.name}}</h5>
+          <h6>{{user.email}}</h6>
+          <p>{{user.country}}</p>
+          <a style="font-weight: bold; font-size: 1.5em" [routerLink]="[ '/addpost', user.id ]">Add post</a>
+      </div>
+  </div>
+  <br>
+  <h3 style="color:darkslategray">User Posts</h3>
+  <div style="margin-bottom:10px" class="row img-thumbnail container" *ngFor="let post of posts">
+
+    <p style="color:darkslategray">{{post.content}}</p>
+    <div style="float:right;color:grey">{{post.date | date: 'dd-MM-yyyy HH:mm'}}</div>
+    <button (click)="removePost(post.id)" style="font-weight:bold;color:red;border: none;background: none">Remove</button>
+    <a style="text-decoration:none;color:black" [routerLink]="[ '/updatepost', post ]">Update</a>
+  </div>
+
+  <div *ngIf="posts.length == 0">
+    This user didn't post anything yet
+  </div>
+
+</div>

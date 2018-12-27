@@ -1,0 +1,9 @@
+<div class="container col-md-8">
+  <br>
+  <h3>Update Post</h3><br>
+  <textarea  rows=10 class="form-control" placeholder="Content" [(ngModel)]="content"></textarea><br>
+  <button class="btn btn-success" (click)="updatePost()">Update Content</button><br><br>
+  <div class="alert alert-primary" role="alert" *ngIf="message">
+    {{ message }}
+  </div>
+</div>

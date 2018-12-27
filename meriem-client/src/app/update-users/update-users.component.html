@@ -1,0 +1,10 @@
+<div class="container col-md-3">
+    <br>
+    <h3>Update User</h3><br>
+    <input type="text" class="form-control" placeholder="Full Name" [(ngModel)]="name" /><br>
+    <input type="text" class="form-control" placeholder="Email" [(ngModel)]="email"/><br>
+    <button class="btn btn-success" (click)="updateUser()">Update User</button><br><br>
+    <div class="alert alert-primary" role="alert" *ngIf="message">
+      {{ message }}
+    </div>
+  </div>
